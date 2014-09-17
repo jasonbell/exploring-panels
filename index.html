@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+    <link rel="stylesheet" href="css/theme/start.css" id="theme">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -44,9 +44,10 @@
 			<div class="slides">
 				<section>
 					<h1>Exploring Panels</h1>
-					<p>
-						<small>Presented by Jason Bell / <a href="http://twitter.com/j_bell">@j_bell</a></small>
-					</p>
+					<img src="/images/panels-ui.png" alt="Panels UI">
+					<p>Presented by <a href="http://twitter.com/j_bell">Jason Bell</a><br /> at <a href="http://www.meetup.com/The-Fox-Valley-Drupal-Meetup-Group/events/198980782/" title="Exploring Panels for Your Drupal Projects">Fox Valley Drupal</a> on <time datetime="2014-09-17">17 September 2014</time></p>
+
+					<p><a href="http://jasonbell.github.io/exploring-panels/#/" title="Exploring Panels for your Drupal site">http://jasonbell.github.io/exploring-panels/</a></p>
 				</section>
 
         <section>
@@ -57,48 +58,117 @@
 	          <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/jasonbell/images/73703/solid-teal.png" width="200px">
           </div>
 
-          <ul>
-            <li>
-              <a href="http://twitter.com/j_bell" style="text-align: center;">Twitter</a><span style="text-align: center;">—@j_bell</span>
-            </li>
-            <li>
-              <a href="https://drupal.org/user/392435" style="text-align: center;">Drupal.org</a><span style="text-align: center;">—jason.bell</span>
-            </li>
-          </ul>
+          <p>I occasionally tweet random thoughts or occasional snark as <a href="http://twitter.com/j_bell">@j_bell</a> and work on Drupal as <a href="https://drupal.org/user/392435">jason.bell</a></p>
 
           <p>I help organize <a href="http://www.meetup.com/The-Fox-Valley-Drupal-Meetup-Group/">Fox Valley Drupal</a>.</p>
         </section>
 
 				<section>
-					<h2>Chaos tool suite (CTools)</h2>
-					<p><a href="http://drupal.org/project/ctools">http://drupal.org/project/ctools</a></p>
-					<p><small>If you use Views, this is already installed</small></p>
-
-					<ul>
-						<li>Plugins</li>
-						<li>Exportables</li>
-						<li>AJAX responder</li>
-						<li>Form tools</li>
-						<li>Object caching</li>
-						<li>Contexts</li>
-						<li>Modal dialog</li>
-						<li>Dependent</li>
-						<li>Content</li>
-						<li>Form wizard</li>
-						<li>CSS tools</li>
-					</ul>
-
+					<h1>I love Panels!</h1>
 				</section>
 
 				<section>
-					<h2>Panels</h2>
-					<p><a href="http://drupal.org/project/panels">http://drupal.org/project/panels</a></p>
-					<blockquote>
-						<p>At its core it is a drag and drop content manager that lets you visually design a layout and place content within that layout.</p>
-					</blockquote>
+					<section>
+						<h2>Dependencies</h2>
+						<p class="fragment roll-in">Chaos tools is required to enable Panels.</p>
+						<p class="fragment roll-in">Page Manager is required to make Panels useful.</p>
+						<p class="fragment roll-in">Patience is required to make the most of Panels.</p>
+						</ul>
+
+						<aside class="notes">
+							Ctools is already enabled if you are using Views. <br>
+							Page Manager is a sub-module of Ctools. <br>
+							Patience is a virtue
+						</aside>
+					</section>
+
+					<section>
+						<h2>Chaos tool suite</h2>
+						<p><a href="http://drupal.org/project/ctools">http://drupal.org/project/ctools</a></p>
+						<p><small>If you use Views, this is already installed</small></p>
+
+						<ul class="half-left">
+							<li>Plugins</li>
+							<li>Exportables</li>
+							<li>AJAX responder</li>
+							<li>Form tools</li>
+							<li>Object caching</li>
+						</ul>
+						<ul class="half-right">
+							<li>Contexts</li>
+							<li>Modal dialog</li>
+							<li>Dependent</li>
+							<li>Content</li>
+							<li>Form wizard</li>
+							<li>CSS tools</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Page Manager</h2>
+						<img src="/images/page-manager-ui.png" alt="Page Manager UI">
+						<p>Basically this is a graphic user interface to <code>hook_menu</code> that allows you to create new paths or take over existing system paths.</p>
+
+						<aside class="notes">
+							System paths include node/%nid, taxonomy/term/%tid, and user/%uid. <br>
+							Using Page Manager helps you understand how Drupal builds pages via system paths and how that's different from URL.
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Panels</h2>
+						<p><a href="http://drupal.org/project/panels">http://drupal.org/project/panels</a></p>
+						<blockquote>
+							<p>At its core it is a drag and drop content manager that lets you visually design a layout and place content within that layout.</p>
+						</blockquote>
+
+						<aside class="notes">
+							At its core it is a drag and drop content manager that lets you visually design a layout and place content within that layout.
+						</aside>
+					</section>
+
+					<section>
+						<h2>What does Panels do?</h2>
+						<blockquote>
+							<p><q>A little documentation should go here, but Panels 3 is also a beast</q></p>
+							<footer><cite>Panels module README.txt.</cite></footer>
+						</blockquote>
+
+						<aside class="notes">
+							Panels module README.txt.
+						</aside>
+					</section>
+
+					<section>
+						<h2>What does Panels do?</h2>
+						<ul>
+							<li class="fragment roll-in">Panels is a page rendering handler used within Page Manager.</li>
+							<li class="fragment roll-in">Panels essentially replaces the theme rendering function of a given entity.</li>
+							<li class="fragment roll-in">Panels replaces the <code>$page['content']</code> variable in your template.</li>
+						</ul>
+
+						<aside class="notes">
+							I'll start slightly out of my depth and bring it closer to home for many site builders and themers. <br>
+							When Page Manager is enabled we can pass off the handler for a system path. <strong>DEMO variant type</strong>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<img src="images/panels-with-regions.png" alt="Panels used within a theme with regions">
 
 					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+						When enabled with a typical Drupal theme, Panels works within the established theme regions. Panels takes over the $page['content'] variable
+					</aside>
+				</section>
+
+				<section>
+					<h2>Demo</h2>
+
+					<aside class="notes">
+						Let's look at what this does for nodes. <strong>DEMO</strong>
 					</aside>
 				</section>
 
@@ -106,7 +176,7 @@
 					<h2>Semantic Panels</h2>
 					<p><a href="http://drupal.org/project/semantic_panels">http://drupal.org/project/semantic_panels</a></p>
 					<blockquote>
-						<p>At its core it is a drag and drop content manager that lets you visually design a layout and place content within that layout.</p>
+						<p>It's a CTools style plugin that gives you full control over the HTML output of Panels panes.</p>
 					</blockquote>
 
 					<aside class="notes">
