@@ -168,60 +168,151 @@
 					<h2>Demo</h2>
 
 					<aside class="notes">
-						Let's look at what this does for nodes. <strong>DEMO</strong>
+						Let's look at what this does for nodes. <strong>DEMO: Chrome</strong>
 					</aside>
 				</section>
 
 				<section>
-					<h2>Semantic Panels</h2>
-					<p><a href="http://drupal.org/project/semantic_panels">http://drupal.org/project/semantic_panels</a></p>
-					<blockquote>
-						<p>It's a CTools style plugin that gives you full control over the HTML output of Panels panes.</p>
-					</blockquote>
+					<section>
+						<h2>Layout Plugins</h2>
+						<p>Provide your own custom layout within your theme.</p>
+					</section>
 
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
+					<section>
+						<h2>theme.info</h2>
+						<p>We need to tell our theme that it is providing layout plugins to Panels and where to find them within our theme directory.</p>
+						<pre class="cli"><code>
+; ========================================
+; Panels & Page Manager
+; ========================================
+
+plugins[panels][layouts] = 'plugins/layouts'
+						</code></pre>
+
+						<aside class="notes">
+							Add a plugins directory to your theme. <br>
+							Add these lines to your .info file
+						</aside>
+					</section>
+
+					<section>
+						<h2>Custom Layout</h2>
+						<p>Custom layout plugins are easy to create. Don’t fear the <code>.inc</code> file.</p>
+						<ul>
+							<li>layout.inc</li>
+							<li>layout.png</li>
+							<li>layout.tpl.php</li>
+							<li>layout.css</li>
+						</ul>
+						<aside class="notes">
+							Custom layouts are easy to create. <br>
+							DO NOT use the layout builder code. <br>
+							<strong>DEMO: Sublime Text</strong></a>
+						</aside>
+					</section>
 				</section>
 
 				<section>
-					<h2>Fieldable Panels Panes</h2>
-					<p><a href="http://drupal.org/project/panels">http://drupal.org/project/panels</a></p>
-					<blockquote>
-						<p>At its core it is a drag and drop content manager that lets you visually design a layout and place content within that layout.</p>
-					</blockquote>
+					<section>
+						<h2>Style Plugins</h2>
 
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
+						<aside class="notes">
+							Style plugins provide the opportunity to alter the output of Pane content. <br>
+							Panels ships with a few of these: no markup, rounded corners, default.
+						</aside>
+					</section>
+
+					<section>
+						<h2>theme.info</h2>
+						<p>We need to tell our theme that it is providing style plugins to Panels and where to find them within our theme directory.</p>
+						<pre class="cli"><code>
+; ========================================
+; Panels & Page Manager
+; ========================================
+
+plugins[panels][layouts] = 'plugins/layouts'
+plugins[panels][styles] = 'plugins/styles'
+						</code></pre>
+
+						<aside class="notes">
+							Add a styles directory. <br>
+							Add this line to your .info file.
+						</aside>
+					</section>
+
+					<section>
+						<h2>Custom Style</h2>
+						<p>Custom style plugins are not as easy to create, but are also not so difficult.</p>
+						<ul>
+							<li>style.inc</li>
+						</ul>
+						<aside class="notes">
+							Custom styles are a little more difficult.
+							<strong>DEMO: Sublime Text. Show Start Limiter and Color Pane from Mackay</strong></a>
+						</aside>
+					</section>
+
+					<section>
+						<h2>Semantic Panels</h2>
+						<p><a href="http://drupal.org/project/semantic_panels">http://drupal.org/project/semantic_panels</a></p>
+						<blockquote>
+							<p>It's a CTools style plugin that gives you full control over the HTML output of Panels panes.</p>
+						</blockquote>
+
+						<aside class="notes">
+							Semantic Panels is my favorite style plugin since it helps to remove lots of the nested divs and provide some projects specific HTML. <br>
+							It is also exportable inside of Features.
+						</aside>
+					</section>
 				</section>
 
 				<section>
-					<h2>Panels Everywhere</h2>
-					<p><a href="http://drupal.org/project/panels">http://drupal.org/project/panels</a></p>
-					<blockquote>
-						<p>At its core it is a drag and drop content manager that lets you visually design a layout and place content within that layout.</p>
-					</blockquote>
+					<section>
+						<h2>Custom Content Panes</h2>
+						<p>The module <code>ctools_custom_content</code> is a sub-module in Ctools.</p>
 
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
+						<blockquote>
+							<p>Create custom, exportable, reusable content panes for applications like Panels.</p>
+						</blockquote>
+
+						<aside class="notes">
+							This is essentially like a Block, but exportable and reusable in multiple places. <br>
+							It uses input filters and provides an admin overview screen. <br>
+							You can use token content from the Panels contexts for display. <br>
+							<strong>DEMO: Chrome</strong>
+						</aside>
+					</section>
+
+					<section>
+						<h2>Fieldable Panels Panes</h2>
+						<p><a href="http://drupal.org/project/fieldable_panels_panes">http://drupal.org/project/fieldable_panels_panes</a></p>
+						<blockquote>
+							<p>At its core it is a drag and drop content manager that lets you visually design a layout and place content within that layout.</p>
+						</blockquote>
+
+						<aside class="notes">
+							So custom content panes are cool, but what if we could add fields onto those for specific use cases? <br>
+							We don't need the overhead of a Node, but want structured content pieces to use wherever we want.
+						</aside>
+					</section>
 				</section>
 
 				<section>
-					<h2>Layout Plugins</h2>
+					<section>
+						<h2>Cool.</h2>
+						<p>I’d like that flexibility everywhere please.</p>
+					</section>
+					<section>
+						<h2>Panels Everywhere</h2>
+						<p><a href="http://drupal.org/project/panels_everywhere">http://drupal.org/project/panels_everywhere</a></p>
+						<blockquote>
+							<p>Panels Everywhere is an advanced method to completely do away with Drupal's restrictive blocks system and instead use the much more freeing Panels Layout system to control how your pages look. Panels Everywhere modifies the page as it is being rendered to 'wrap' the content in a display and can even take over your page theme to do away with the need for a page.tpl.php.</p>
+						</blockquote>
 
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Style Plugins</h2>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
+						<aside class="notes">
+							Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+						</aside>
+					</section>
 				</section>
 
 				<!-- Example of nested vertical slides -->
